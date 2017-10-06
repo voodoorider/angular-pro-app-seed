@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
   }
 
   async registerUser($event: FormGroup) {
-    const {email, password} = $event.value;
+    const { email, password } = $event.value;
     try {
       await this.authService.createUser(email, password);
       this.router.navigate(['/'])

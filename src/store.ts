@@ -7,6 +7,7 @@ import { User } from './auth/shared/services/auth/auth.service';
 
 export interface State {
   user: User,
+
   [key: string]: any
 }
 

@@ -1,15 +1,15 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { Store } from 'store';
-
 // feature modules
 import { AuthModule } from '../auth/auth.module';
-
 // containers
 import { AppComponent } from './containers/app/app.component';
+import { AppHeaderComponent } from './components/app-header/app-header.component';
+import { AppNavComponent } from './components/app-nav/app-nav.component';
+import { HealthModule } from '../health/health.module';
 
 // components
 
@@ -20,10 +20,13 @@ export const ROUTES: Routes = [];
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    AuthModule
+    AuthModule,
+    HealthModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    AppHeaderComponent,
+    AppNavComponent
   ],
   providers: [
     Store
@@ -32,7 +35,8 @@ export const ROUTES: Routes = [];
     AppComponent
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
 
 /**
  * var config = {

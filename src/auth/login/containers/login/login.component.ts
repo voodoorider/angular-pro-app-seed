@@ -4,8 +4,8 @@ import { AuthService } from '../../../shared/services/auth/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'login',
-    template: `
+  selector: 'login',
+  template: `
         <div>
             <auth-form (submitted)="loginUser($event)">
               <h1>Login</h1>
@@ -22,19 +22,21 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-    error: string;
+  error: string;
 
-    constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
-    ngOnInit() { }
+  ngOnInit() {
+  }
 
-    async loginUser(event: FormGroup) {
-      const {email, password} = event.value;
-      try {
-        await this.authService.loginUser(email, password);
-        this.router.navigate(['/'])
-      } catch (err) {
-        this.error = err.message;
-      }
+  async loginUser(event: FormGroup) {
+    const { email, password } = event.value;
+    try {
+      await this.authService.loginUser(email, password);
+      this.router.navigate(['/'])
+    } catch (err) {
+      this.error = err.message;
     }
+  }
 }

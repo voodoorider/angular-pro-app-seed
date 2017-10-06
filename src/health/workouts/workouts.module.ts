@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MealsComponent } from './containers/workouts/workouts.component';
+import { WorkoutsComponent } from './containers/workouts/workouts.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';

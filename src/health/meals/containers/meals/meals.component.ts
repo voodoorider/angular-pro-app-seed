@@ -39,7 +39,7 @@ import { Store } from 'store';
 export class MealsComponent implements OnInit, OnDestroy {
 
   meals$: Observable<Meal[]>;
-  subsrciption: Subscription;
+  subscription: Subscription;
 
   constructor(private store: Store, private mealsService: MealsService) {
 
@@ -47,11 +47,11 @@ export class MealsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.meals$ = this.store.select<Meal[]>('meals');
-    this.subsrciption = this.mealsService.meals$.subscribe();
+    this.subscription = this.mealsService.meals$.subscribe();
   }
 
   ngOnDestroy() {
-    this.subsrciption.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
 

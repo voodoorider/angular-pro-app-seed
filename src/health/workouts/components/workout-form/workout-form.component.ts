@@ -22,8 +22,12 @@ import { Workout } from '../../../shared/services/workouts/workouts.service';
         <div class="workout-form__name">
           <label>
             <h3>Workout name</h3>
-            <input type="text" placeholder="e.g. English Breakfast" formControlName="name">
+            <input type="text" placeholder="e.g. Running" formControlName="name">
             <div class="error" *ngIf="required">Workout name is required</div>
+          </label>
+          <label>
+            <h3>Type</h3>
+            <workout-type formControlName="type"></workout-type>
           </label>
         </div>
 
@@ -71,6 +75,7 @@ export class WorkoutFormComponent implements OnInit, OnChanges {
 
   form = this.fb.group({
     name: ['', Validators.required],
+    type: 'strength'
   });
 
   constructor(private fb: FormBuilder) {
